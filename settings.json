@@ -1,0 +1,20 @@
+{
+    "server": {
+        "host":"0.0.0.0",
+        "port": 8000
+    },
+    "database": {
+        "user_name": "postgres",
+        "user_password": "password123",
+        "host": "127.0.0.1:5432",
+        "database_name":"ai-api"
+    },
+    "ollama": {
+        "model": "llama3.2",
+        "options": {
+            "num_threads":1,
+            "temperature": 0.7,
+            "num_predict": 4096
+        }
+    }
+}

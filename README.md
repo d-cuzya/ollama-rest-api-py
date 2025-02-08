@@ -1,7 +1,7 @@
 # Ollama API
 This is a simple rest api service. It work in python and save requests and answers in Postgresql.
 #### Install & Run
-> ##### Download and install Ollama
+> # Download and install Ollama
 
 1) Visit [website](https://ollama.com/download) or their [repository](https://github.com/ollama/ollama) and download program for your os.
 2) Install a suitable AI model
@@ -55,15 +55,23 @@ Its structure:
 ```
 Server:
 `host` - the host/ip on which the api service will run
+
 `port` - port on which the api service will run
+
 Database:
 `user_name` - username for database
+
 `user_password`- password for database
+
 `host`- database's host
+
 `database_name`- database's name
+
 Ollama:
 `model`- the name of the model from ollama
+
 `options`- [full list options](https://pypi.org/project/ollama-python/)
+
 > ##### Start service
 
 ```
@@ -71,4 +79,27 @@ python api-server.py
 ```
 
 # Rest api Guide
-in dev
+Example local addres:
+```
+http://127.0.0.1:8000/api/
+```
+
+> Create request for AI
+
+```
+(POST) http://127.0.0.1:8000/api/create_request
+```
+
+Request's body:
+```
+{ "request" : "Your request for AI" }
+```
+
+Return:
+```
+{ "uuid" : "unic_uuid" }
+Example: { "uuid" : "9ea6ee69-6fc4-45b8-9d32-390c7539a2df" }
+```
+
+> Get request's status
+> Get answer

@@ -1,5 +1,5 @@
 # Ollama API
-This is a simple rest api service. It work in python and save requests and answers in Postgresql.
+This is a simple rest api service for [ollama](https://github.com/ollama/ollama)(For use AI in your computer). It work in python and save requests and answers in Postgresql.
 # Install & Run
 > ##### Download and install Ollama
 
@@ -122,6 +122,7 @@ Return:
 ```
 
 There are 5 statuses:
+
 `CREATED` - Created, but processing has not started yet
 
 `MAKING` - Processing has started
@@ -133,3 +134,17 @@ There are 5 statuses:
 `ERROR` - An error has occurred, and the text has been saved in response.
 
 > Get answer
+
+```
+(GET) http://127.0.0.1:8000/api/get_answer/{uuid}
+```
+
+Example:
+```
+http://127.0.0.1:8000/api/get_answer/9ea6ee69-6fc4-45b8-9d32-390c7539a2df
+```
+
+Return:
+```
+{ "answer" : "Answer from AI" }
+```
